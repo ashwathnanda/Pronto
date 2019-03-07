@@ -1,0 +1,47 @@
+﻿Question,Tag,Snippet
+How delete record Django models?,"delete,django,model,record",SomeModel.objects.filter(id=id).delete()
+regex repeating words string `s`,"regex,repeating,string","re.sub('(?<!\\S)((\\S+)(?:\\s+\\2))(?:\\s+\\2)+(?!\\S)', '\\1', s)"
+BeautifulSoup search string 'Elsie' inside tag 'a',"beautifulsoup,search,string","soup.find_all('a', string='Elsie')"
+normalize pandas dataframe `df` row,"dataframe,normalize,pandas","df.div(df.sum(axis=1), axis=0)"
+Concatenate elements list 'x' multiple integers single integer,"concatenate,integers","sum(d * 10 ** i for i, d in enumerate(x[::-1]))"
+Converting int to String and Strings to int,"integer,string","String a = String.valueOf(2);  
+int i = Integer.parseInt(a); "
+Converting String to date in Java,"date,java,string",java.util.Date = java.text.DateFormat.getDateInstance().parse(date String);
+Converting Java util.Date to sql.Date,"java,sql.date,util.date","java.util.Date utilDate = new java.util.Date();
+java.sql.Date sqlDate = new java.sql.Date(utilDate.getTime());"
+HTTP Proxy setting in Java,"http,java,proxy,setting","System.getProperties().put(""http.proxyHost"", ""someProxyURL"");
+System.getProperties().put(""http.proxyPort"", ""someProxyPort"");
+System.getProperties().put(""http.proxyUser"", ""someUserName"");
+System.getProperties().put(""http.proxyPassword"", ""somePassword"");"
+Sending the HTTP request and fetching data with Java,"data,fetch,fetching,http,java,request","import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.URL;
+public class Main { public static void main(String[] args) { try { URL my_url= new URL(""http://www.viralpatel.net/blogs/""); BufferedReader br = newBufferedReader(new InputStreamReader(my_url.openStream())); String strTemp =""""; while(null != (strTemp = br.readLine())){ System.out.println(strTemp); } }catch (Exception ex) { ex.printStackTrace(); } } }"
+Creating JSON data in Java,"data,java,json","mport org.json.JSONObject; ... ... JSONObject json = new JSONObject(); json.put(""city"",""Mumbai""); json.put(""country"", ""India""); ... String output = json.toString(); …"
+Converting Array to Map in Java,"array,java,map","import java.util.Map;
+import org.apache.commons.lang.ArrayUtils;
+public class Main {
+  public static void main(String[] args) {
+    String[][] countries = { { ""United States"", ""New York"" }, { ""United Kingdom"", ""London"" },
+        { ""Netherland"", ""Amsterdam"" }, { ""Japan"", ""Tokyo"" }, { ""France"", ""Paris"" } };
+    Map countryCapitals = ArrayUtils.toMap(countries);
+System.out.println(""Capital of Japan is "" + countryCapitals.get(""Japan""));System.out.println(""Capital of France is "" + countryCapitals.get(""France"")); } }
+"
+Get name of current method,"current,method,name","String methodName = Thread.currentThread().getStackTrace()[1].getMethodName(); 
+"
+Appending content to file in Java,"append,appending,file,java","Jaxenter out = null;
+try {
+    out = new Jaxenter (new FileWriter(”filename”, true));
+    out.write(”aString”);
+} catch (IOException e) {
+    // error processing code
+} finally {
+    if (out != null) {
+        out.close();
+    }
+}"
+Struts Login Application Using Action Form,"action form,application,login,struts",https://dzone.com/sites/all/files/Exampleandlib2.zip
+DynaActionForm using Struts,"dynaactionform,struts",https://dzone.com/sites/all/files/Example5lib.zip
+Custom Validation Example in Struts,"custom,struts,validation",https://dzone.com/sites/all/files/Example19lib.zip
+Date and Email Validation Example in Struts,"date,email,struts,validation",https://dzone.com/sites/all/files/Exampleandlib17.zip
+Export JSP to Excel using struts,"excel,export,jsp,struts",https://dzone.com/sites/all/files/Example12lib.zip

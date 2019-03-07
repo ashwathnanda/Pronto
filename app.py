@@ -1,19 +1,25 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request
+from flashtext import KeywordProcessor
+import pandas as pd
  
 app = Flask(__name__)
  
+#renders the index file
 @app.route('/')
 def index():
 	return render_template('index.html')
 
+#triggers when the user enters his/her requirement
 @app.route('/fetch_code' , methods = ['POST'])
 def fetch_code():
-	from flashtext import KeywordProcessor
-	import pandas as pd
 	key_processor = KeywordProcessor()
 	
-	data = pd.read_csv('data_tag.csv')
+	#reading the data 	
+	data = pd.read_csv('dataset/data_tag.csv')
+	
+	#var to keep track of the correct answer
 	flag = 0
+	
 	#converting the tags into a list
 	l = list(data['Tag'])
 	my_list2 = []
@@ -43,4 +49,4 @@ def fetch_code():
 	return render_template('result.html',answer=answer)
 
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0' , debug = True , port = 8080)
+    app.run('0.0.0.0', debug = True , port = 8080)

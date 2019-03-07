@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../static/css/style1.css"/>
+
+<style>
+
+.checked {
+  color: orange;
+}
+
+body {
+  font-family: Arial;
+  color: powderblue;
+  background-color: powderblue;
+}
+
+div{
+border: double;
+}
+
+.fset{
+ border: 0;
+  background: #222;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
+}
+
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  bottom: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+}
+
+.left {
+  left: 0;
+  
+}
+
+.right {
+  right: 0;
+ 
+}
+
+.expand {
+background-color: #9c9c9c;
+transition: all 300ms ease-in;
+height: 50px;
+border-style: solid;
+border-width: 1px;}
+
+.expand:hover {
+height: 200px;
+width: 250px;
+background-color: white;
+transition: all 300ms ease-in;
+border-color: white;
+border-width: 1px;}	
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+
+
+</style>
+
+
+
+
+<title>UST GLOBAL</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<body>
+<fieldset style="background-color:black">
+<IMG src="ust.jpg" alt="UST" align="left" width="255" height="85">
+<h1 style="text-align:center; color:white;"><strong>Welcome</strong></h1>
+</fieldset>
+
+
+
+<form action = "/fetch_code" , method = "POST">
+
+
+<div class="split left">
+  <div class="centered">
+
+    <br>
+  <label style="color:black">Enter your query:<br><br>
+<textarea class="txt expand" name = "input"></textarea>
+      <br>
+	  <br>
+
+<form>
+<input type="radio" name="choice" value="snippet">Snippet<br>
+<input type="radio" name="choice" value="program">Program<br>
+<br>
+</form>
+
+<br>
+      <p><input type = "submit" value = "submit" /></p>
+      <br><br>
+    
+	</form>
+</div>
+
+
+</div>
+
+
+<br>
+<br>
+<br>
+
+
+<div class="split right">
+ <div class="centered">
+  
+    <label style="color: black">Your Program</label>
+<br>
+<br>
+<textarea class="expand" name="message" rows="10" cols="30">{{answer}}</textarea>
+<br>
+
+<textarea rows="1" cols="20" placeholder="link for project zip file"></textarea>
+<br>
+<br>
+<label style="color:black">Feedback<label>
+<fieldset class="rating" align="center">
+    <input type="radio" id="star5" name="rating" value="5" /><label class = "full" for="star5" title="Awesome - 5 stars"></label>
+    <input type="radio" id="star4half" name="rating" value="4 and a half" /><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+    <input type="radio" id="star4" name="rating" value="4" /><label class = "full" for="star4" title="Pretty good - 4 stars"></label>
+    <input type="radio" id="star3half" name="rating" value="3 and a half" /><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+    <input type="radio" id="star3" name="rating" value="3" /><label class = "full" for="star3" title="Meh - 3 stars"></label>
+    <input type="radio" id="star2half" name="rating" value="2 and a half" /><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+    <input type="radio" id="star2" name="rating" value="2" /><label class = "full" for="star2" title="Kinda bad - 2 stars"></label>
+    <input type="radio" id="star1half" name="rating" value="1 and a half" /><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+    <input type="radio" id="star1" name="rating" value="1" /><label class = "full" for="star1" title="Sucks big time - 1 star"></label>
+    <input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+</fieldset>
+<br>
+<textarea name="feedback" rows="5" cols="20" placeholder="Leave a comment"></textarea>
+
+</div>
+
+
+</div>
+
+
+     </label>
+	 
+
+	 
+
+
+</body>
+</html> 

@@ -1,4 +1,4 @@
-FROM gliderlabs/alpine:3.4
+FROM alpine:3.4
 
 RUN apt-get update -y && \
     apt-get install -y python-pip python-dev
