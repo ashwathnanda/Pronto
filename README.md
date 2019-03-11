@@ -15,6 +15,6 @@ python app.py
 
 To build a Docker Image ( cd onto the directory and run the below command or specify the path to the Dockerfile )
 ```
-cd ./mini-overflow-master
+$ cd ./mini-overflow-master
 $ docker build .
 ```
