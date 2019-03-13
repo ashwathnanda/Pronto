@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="static/css/style.css">
+
+</head>
+<body>
+
+<header>
+	<h1>CODE<span>OF THE</span>LOST</h1>
+	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/mountain-range-front.png">
+</header> 
+ 
+<main style="background-color:#90A4AE">
+ 
+
+<form action = "/fetch_code" method ="POST">
+<div align="center">
+<br>
+  <label style="color:white">Enter your Requriement:<br><br>
+<textarea class="txt expand" rows="10" cols="30" name = "input"></textarea>
+      <br>
+      <br>
+  	<div class="wrap" align="center">
+  		<input type="submit" value="submit" class="button op"  style="
+    padding-left: 0px;
+	color: black;
+    padding-bottom: 0px;
+    border-right-width: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+	 width: 100px;
+    height: 30px;
+    " />
+ 
+	</div>
+ 
+</form>
+</div>
+</div>
+<br>
+<br>
+<div align="center">
+    <label style="color: white">Your Project</label>
+<br>
+
+<textarea class="expand" name="message" rows="10" cols="30">{{answer}}</textarea>
+<br>
+ <br>
+</div>
+</div>
+     </label> 
+
+ </main>
+</body>
+</html>
