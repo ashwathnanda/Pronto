@@ -6,16 +6,19 @@ Dependencies installation
 ```bash
 pip install -r requirements.txt
 ```
-<br>
+
 Run the Flask Application
 
 ```
 python app.py
 ```
+
 To Run this service as an API run 
+
 ```
 python api_server.py
 ```
+
 Now use any API testing tool like POSTMAN to test the api 
 
 Or use the Requests library 
