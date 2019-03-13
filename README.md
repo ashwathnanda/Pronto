@@ -3,7 +3,7 @@ A Flask Web Application which fetches code snippet or JAVA Project (.jar) file b
 <br>
 Dependencies installation
 
-```
+```bash
 pip install -r requirements.txt
 ```
 <br>
