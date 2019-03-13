@@ -64,4 +64,4 @@ def fetch_code():
 
 #runs the web application with the appropriate port and host
 if __name__ == '__main__':
-    app.run(host = '0.0.0.0', debug = True , port = 8080)
+    app.run(host = '0.0.0.0',port = 8080)
