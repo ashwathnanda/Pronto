@@ -6,7 +6,7 @@ Dependencies installation
 ```
 pip install -r requirements.txt
 ```
-
+<br>
 Run the Flask Application
 
 ```
@@ -16,16 +16,17 @@ To Run this service as an API run
 ```
 python api_server.py
 ```
-Now use any API testing tool like POSTMAN to test the api
+Now use any API testing tool like POSTMAN to test the api 
 
 Or use the Requests library 
-```
+```python
 import requests
 code = input('Enter your requirement :')
 #test ip. Change it to your own ip
 resp = requests.get('http://18.204.37.207:8080/fetch/{}'.format(code))
 print 'code: ', resp.text 
 ```
+The API accepts only GET requests.
 
 
 To build a Docker Image ( cd onto the directory and run the below command or specify the path to the Dockerfile )
