@@ -1,6 +1,13 @@
+'''
+
+Flask Application which fetches required project based on the requirement provided by the user
+
+'''
+
 from flask import Flask, render_template, request
 from flashtext import KeywordProcessor
 import pandas as pd
+import requests
  
 app = Flask(__name__)
  
@@ -9,17 +16,24 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
+
+@app.route('/fetch_code_api', methods = ['GET'])
+def fetch_code_api():
+	sentence = request.args.get['input']
+	#ip is dynamic and wont be the same everytime. Changes everytime EC2 instance is boooted
+	resp = requests.get('http://3.209.12.194:8080/fetch/{}'.format(sentence))
+	answer = resp.text
+	return render_template('divexample.html',answer=answer)
+
 #triggers when the user enters his/her requirement
 @app.route('/fetch_code' , methods = ['POST'])
 def fetch_code():
 	key_processor = KeywordProcessor()
-	
 	#reading the data 	
 	data = pd.read_csv('dataset/data_tag.csv')
 	
-	#var to keep track of the correct answer
+	#flag var to ckeck for correct requirement
 	flag = 0
-	
 	#converting the tags into a list
 	l = list(data['Tag'])
 	my_list2 = []
@@ -46,7 +60,8 @@ def fetch_code():
 	if( flag == 0):
 		answer = 'File not found'
 	
-	return render_template('result.html',answer=answer)
+	return render_template('index.html',answer=answer)
 
+#runs the web application with the appropriate port and host
 if __name__ == '__main__':
-    app.run('0.0.0.0', debug = True , port = 8080)
+    app.run(host = '0.0.0.0', debug = True , port = 8080)
