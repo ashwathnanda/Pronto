@@ -23,7 +23,7 @@ def fetch_code_api():
 	#ip is dynamic and wont be the same everytime. Changes everytime EC2 instance is boooted
 	resp = requests.get('http://3.209.12.194:8080/fetch/{}'.format(sentence))
 	answer = resp.text
-	return render_template('divexample.html',answer=answer)
+	return render_template('index.html',answer=answer)
 
 #triggers when the user enters his/her requirement
 @app.route('/fetch_code' , methods = ['POST'])
