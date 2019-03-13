@@ -36,4 +36,4 @@ class Fetch_code(Resource):
    
 
 api.add_resource(Fetch_code, "/fetch/<string:code>")
-app.run(debug=True, port = 8080 , host = '0.0.0.0')
+app.run(port = 8080)
