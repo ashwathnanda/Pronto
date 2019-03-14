@@ -17,7 +17,6 @@ data = pd.read_csv('dataset/data_tag.csv')
 l = list(data['Tag'])
 my_list2 = []
 for i,m in enumerate(l):
-	m = l[i]
 	my_list2.extend(m.split(','))
 	
 #adding the tags onto the processor
