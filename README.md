@@ -1,7 +1,7 @@
 # mini-overflow
 A Flask Web Application which fetches code snippet or JAVA Project (.jar) file based on the requirement provided by the User.
 
-- This is a Proof of concept(or Minimum viable concept) and is not intended to be used on a commercial scale.
+This is a Proof of concept(or Minimum viable concept) and is not intended to be used on a commercial scale.
 
 
 - Dependencies installation
@@ -22,9 +22,9 @@ python app.py
 python api_server.py
 ```
 
-- Now use any API testing tool like POSTMAN to test the api 
+Now use any API testing tool like POSTMAN to test the api 
 
-Or use the Requests library 
+- Or use the Requests library 
 ```python
 import requests
 code = input('Enter your requirement :')
@@ -32,7 +32,7 @@ code = input('Enter your requirement :')
 resp = requests.get('http://18.204.37.207:8080/fetch/{}'.format(code))
 print 'code: ', resp.text 
 ```
-- The API accepts only GET requests.
+The API accepts only GET requests.
 
 
 - To build a Docker Image ( cd onto the directory and run the below command or specify the path to the Dockerfile )
