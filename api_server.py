@@ -16,7 +16,7 @@ key_processor = KeywordProcessor()
 data = pd.read_csv('dataset/data_tag.csv')
 l = list(data['Tag'])
 my_list2 = []
-for i in range(len(l)):
+for i,m in enumerate(l):
 	m = l[i]
 	my_list2.extend(m.split(','))
 	
@@ -29,8 +29,8 @@ class Fetch_code(Resource):
       ans = key_processor.extract_keywords(code)
       ans.sort()
       ans = ','.join(ans)
-      for i in range(len(l)):
-         if(ans == l[i]):
+      for i,item in enumerate(l):
+         if(ans == item):
             return data['Snippet'][i], 200
       return 'requirement not found' , 404
    
