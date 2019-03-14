@@ -16,7 +16,7 @@ pip install -r requirements.txt
 python app.py
 ```
 
-- To Run this service as an API run 
+- To Run this code as an rest-API service. 
 
 ```
 python api_server.py
