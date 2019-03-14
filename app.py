@@ -37,8 +37,7 @@ def fetch_code():
 	#converting the tags into a list
 	l = list(data['Tag'])
 	my_list2 = []
-	for i in range(len(l)):
-		m = l[i]
+	for i,m in enumerate(l):m
 		my_list2.extend(m.split(','))
 	
 	#adding the tags onto the processor
@@ -53,8 +52,8 @@ def fetch_code():
 	sentence = request.form['input']
 	c = return_keyword(sentence.lower())
 	c = ','.join(c)
-	for i in range(len(l)):
-		if(c == l[i]):
+	for i,item in enumerate(l):
+		if(c == item):
 			answer = data['Snippet'][i]
 			flag = 1
 	if( flag == 0):
