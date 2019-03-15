@@ -32,7 +32,7 @@ code = input('Enter your requirement :')
 resp = requests.get('http://18.204.37.207:8080/fetch/{}'.format(code))
 print 'code: ', resp.text 
 ```
-The API accepts only GET requests.
+The API accepts both POST and GET requests.
 
 
 - To build a Docker Image ( cd onto the directory and run the below command or specify the path to the Dockerfile )
