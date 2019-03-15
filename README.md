@@ -1,5 +1,5 @@
 # mini-overflow
-A Flask Web Application which fetches code snippet or JAVA Project (.jar) file based on the requirement provided by the User.
+A Flask Web Application which fetches JAVA Project (.jar) file based on the requirement provided by the User. All the files are uploaded on AWS S3 bucket.
 
 This is a Proof of concept(or Minimum viable concept) and is not intended to be used on a commercial scale.
 
