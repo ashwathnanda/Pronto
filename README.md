@@ -28,11 +28,14 @@ Now use any API testing tool like POSTMAN to test the api
 ```python
 import requests
 code = input('Enter your requirement :')
-#test ip. Change it to your own ip
-resp = requests.get('http://18.204.37.207:8080/fetch/{}'.format(code))
+#GET requests
+resp = requests.get('http://127.0.0.1:8080/fetch/{}'.format(code))
+
+#for POST requests
+resp = requests.post('http://127.0.0.1:8080/', data={'req':code))
+
 print 'code: ', resp.text 
 ```
-The API accepts both POST and GET requests.
 
 
 - To build a Docker Image ( cd onto the directory and run the below command or specify the path to the Dockerfile )
