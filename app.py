@@ -16,12 +16,14 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
-
-@app.route('/fetch_code_api', methods = ['GET'])
+@app.route('/fetch_code_api', methods = ['GET','POST'])
 def fetch_code_api():
-	sentence = request.args.get['input']
-	#ip is dynamic and wont be the same everytime. Changes everytime EC2 instance is boooted
-	resp = requests.get('http://3.209.12.194:8080/fetch/{}'.format(sentence))
+	if(requests.methods == 'POST'):
+		sentence = request.form['input']
+		resp = requests.post('http://3.209.12.194:8080/' , data = {'req':sentence})
+	else:
+		sentence = request.args.get['input']
+		resp = requests.get('http://3.209.12.194:8080/fetch/{}'.format(sentence))
 	answer = resp.text
 	return render_template('index.html',answer=answer)
 
@@ -37,7 +39,7 @@ def fetch_code():
 	#converting the tags into a list
 	l = list(data['Tag'])
 	my_list2 = []
-	for i,m in enumerate(l):m
+	for i,m in enumerate(l):
 		my_list2.extend(m.split(','))
 	
 	#adding the tags onto the processor
@@ -63,4 +65,4 @@ def fetch_code():
 
 #runs the web application with the appropriate port and host
 if __name__ == '__main__':
-    app.run(port = 8080)
+    app.run(debug=True,port = 8080)
