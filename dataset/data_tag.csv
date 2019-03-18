@@ -1,4 +1,4 @@
-﻿Question,Tag,Link
+﻿Question,Tag,Snippet
 Fetching data from database using struts,"database,fetching,struts",https://s3.amazonaws.com/ashwathbucket/dataset/how-to-fetch-data-from-database-in-jsp-using-struts2.zip
 Creating a hello world page in struts,"hello world,struts",https://s3.amazonaws.com/ashwathbucket/dataset/Example1_1.zip
 Spring form tags,"spring,tags",https://s3.amazonaws.com/ashwathbucket/dataset/SpringExample7.war
@@ -17,3 +17,32 @@ Spring restful webservice,"restful,spring,webservice",https://s3.amazonaws.com/a
 Spring MVC example,"mvc,spring",https://s3.amazonaws.com/ashwathbucket/dataset/spring-mvc-example.zip
 Spring MVC Hibernate MySQL Integration CRUD Example,"hibernate,mvc,spring",https://s3.amazonaws.com/ashwathbucket/dataset/SpringMVCHibernate.zip
 Spring hibernate integration example,"hibernate,integration,spring",https://s3.amazonaws.com/ashwathbucket/dataset/SpringHibernateExample.zip
+Hibernate EH Cache example,"cache,eh,hibernate",https://s3.amazonaws.com/ashwathbucket/dataset/HibernateEHCacheExample.7z
+Hibernate validator example,"hibernate,validator",https://s3.amazonaws.com/ashwathbucket/dataset/HibernateValidator.7z
+Dependency Injection Example,"dependency,injection",https://s3.amazonaws.com/ashwathbucket/dataset/DependencyInjectionExample.7z
+File upload and download using servlet,"download,file,servlet,upload",https://s3.amazonaws.com/ashwathbucket/dataset/ServletFileUploadDownloadExample.7z
+HTTP session using servlet,"http,servlet,session",https://s3.amazonaws.com/ashwathbucket/dataset/ServletHttpSessionExample.7z
+Servlet listener example,"listener,servlet",https://s3.amazonaws.com/ashwathbucket/dataset/ServletListenerExample.7z
+jQuery AJAX Web Application,"ajax,application,jquery,web",https://s3.amazonaws.com/ashwathbucket/dataset/jQuery-AJAX-Web-Application.7z
+Servlet Exception Handling,"exception handling,servlet",https://s3.amazonaws.com/ashwathbucket/dataset/ServletExceptionHandling.7z
+code for spring boot docker,"boot,docker,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-docker.7z
+code for spring boot actuator,"actuator,boot,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-actuator.7z
+code for spring boot admin,"admin,boot,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-admin-simple.7z
+code for spring boot banner,"banner,boot,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-banner.7z
+code for spring commandlinerunner,"commandlinerunner,boot,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-commandLineRunner.7z
+code for fast DFS,"boot,fastdfs,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-fastDFS.7z
+code for spring boot jpa,"boot,jpa,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-jpa.7z
+code for spring boot mail,"boot,mail,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-mail.7z
+code for spring boot memcache,"boot,memcache,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-memcache-spymemcached.7z
+code for spring boot mongodb,"boot,mongodb,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-mongodb.7z
+code for spring boot mybatis,"boot,mybatis,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-mybatis.7z
+code for spring boot package,"boot,package,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-package.7z
+code for spring boot rabbitmq,"boot,rabbitmq,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-rabbitmq.7z
+code for spring boot redis,"boot,redis,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-redis.7z
+code for spring boot scheduler,"boot,scheduler,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-scheduler.7z
+code for spring boot shiro,"boot,shiro,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-shiro.7z
+code for spring boot web,"boot,spring,web",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-web.7z
+code for spring boot webflux,"boot,spring,webflux",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-webflux.7z
+code for spring boot thymeleaf,"boot,spring,thymeleaf",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-boot-thymeleaf.7z
+code for spring mvc jdbc template,"jdbc,mvc,spring",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/SpringMvcJdbcTemplate.7z
+code for spring bean config master,"bean,config,master",https://s3.ap-south-1.amazonaws.com/elasticbeanstalk-ap-south-1-443385505666/repo/spring-bean-config-master.7z
