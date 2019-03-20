@@ -103,4 +103,4 @@ if __name__ == '__main__':
 	logger = logging.getLogger('werkzeug')
 	logger.setLevel(logging.ERROR)
 	logger.addHandler(handler)
-	app.run(debug=True,port = 8080)
+	app.run(port = 8080)
