@@ -30,11 +30,12 @@ class Fetch_code(Resource):
       ans = key_processor.extract_keywords(code)
       ans.sort()
       ans = ','.join(ans)
-      for i in range(len(l)):
-         if(ans == l[i]):
+      for i,item in enumerate(l):
+         if(ans == item):
             return data['Snippet'][i], 200
       return 'Requirement not found' , 404
-   
+
+#POST request with 'req' as the argument  
    def post(self):
       parser.add_argument('req',type=str)
       args = parser.parse_args()
@@ -43,8 +44,8 @@ class Fetch_code(Resource):
       ans = key_processor.extract_keywords(code)
       ans.sort()
       ans = ','.join(ans)
-      for i in range(len(l)):
-         if(ans == l[i]):
+      for i,item in enumerate(l):
+         if(ans == item):
             return data['Snippet'][i], 200
       return 'Requirement not found' , 404
       
