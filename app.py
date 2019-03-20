@@ -1,14 +1,17 @@
 '''
-
 Flask Application which fetches required project based on the requirement provided by the user
-
 '''
 
 from flask import Flask, render_template, request
 from flashtext import KeywordProcessor
 import pandas as pd
 import requests
- 
+from logging.handlers import RotatingFileHandler
+from time import strftime
+import logging
+import traceback
+
+
 app = Flask(__name__)
  
 #renders the index file
@@ -16,6 +19,7 @@ app = Flask(__name__)
 def index():
 	return render_template('index.html')
 
+#Change the IP to the one you are using
 @app.route('/fetch_code_api', methods = ['GET','POST'])
 def fetch_code_api():
 	if(requests.methods == 'POST'):
@@ -33,7 +37,6 @@ def fetch_code():
 	key_processor = KeywordProcessor()
 	#reading the data 	
 	data = pd.read_csv('dataset/data_tag.csv')
-	
 	#flag var to ckeck for correct requirement
 	flag = 0
 	#converting the tags into a list
@@ -63,6 +66,41 @@ def fetch_code():
 	
 	return render_template('index.html',answer=answer)
 
+@app.after_request
+def after_request(response):
+    """ Logging after every request. """
+    # This avoids the duplication of registry in the log,
+    # since that 500 is already logged via @app.errorhandler.
+    if response.status_code != 500:
+        ts = strftime('[%Y-%b-%d %H:%M]')
+        logger.error('%s %s %s %s %s %s',
+                      ts,
+                      request.remote_addr,
+                      request.method,
+                      request.scheme,
+                      request.full_path,
+                      response.status)
+    return response
+
+
+@app.errorhandler(Exception)
+def exceptions(e):
+    """ Logging after every Exception. """
+    ts = strftime('[%Y-%b-%d %H:%M]')
+    tb = traceback.format_exc()
+    logger.error('%s %s %s %s %s 5xx INTERNAL SERVER ERROR\n%s',
+                  ts,
+                  request.remote_addr,
+                  request.method,
+                  request.scheme,
+                  request.full_path,
+                  tb)
+    return "Internal Server Error", 500
+
 #runs the web application with the appropriate port and host
 if __name__ == '__main__':
-    app.run(debug=True,port = 8080)
+	handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=3)
+	logger = logging.getLogger('werkzeug')
+	logger.setLevel(logging.ERROR)
+	logger.addHandler(handler)
+	app.run(debug=True,port = 8080)
