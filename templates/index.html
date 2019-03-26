@@ -1,56 +1,101 @@
 <!DOCTYPE html>
-<html>
 <head>
-<link rel="stylesheet" href="static/css/style.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pronto</title>
+<style>
+textarea[type="feedback"]::placeholder {  
+                text-align: left; 
+            } 
+			</style>
 </head>
+
 <body>
+<link rel="stylesheet" href="../static/css/nav.css">
+<link rel="stylesheet" href="../static/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css"/>
+    <script src="../static/js/jquery-1.11.1.min.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
+<fieldset class="field_set">
+<br>
+</fieldset>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#" style=" font-size: 26px">Pronto</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+  
+            <li><a href="/">Documentation</a></li>     
+			<ul class="nav navbar-nav">
+			
+            <li><a href="/">About us</a></li>         
+			<ul class="nav navbar-nav">
+			
+            <li><a href="/">Contact us</a></li>
 
-<header>
-	<h1>CODE<span>OF THE</span>LOST</h1>
-	<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/mountain-range-front.png">
-</header> 
- 
-<main style="background-color:#90A4AE">
- 
+        </div>
+      </div>
+</nav>
 
-<form action = "/fetch_code" method ="POST">
-<div align="center">
 <br>
-  <label style="color:white">Enter your Requriement:<br><br>
-<textarea class="txt expand" rows="10" cols="30" name = "input"></textarea>
-      <br>
-      <br>
-  	<div class="wrap" align="center">
-  		<input type="submit" value="submit" class="button op"  style="
-    padding-left: 0px;
-	color: black;
-    padding-bottom: 0px;
-    border-right-width: 0px;
-    padding-right: 0px;
-    padding-top: 0px;
-	 width: 100px;
-    height: 30px;
-    " />
- 
-	</div>
- 
-</form>
-</div>
-</div>
-<br>
-<br>
-<div align="center">
-    <label style="color: white">Your Project</label>
 <br>
 
-<textarea class="expand" name="message" rows="10" cols="30">{{answer}}</textarea>
-<br>
- <br>
-</div>
-</div>
-     </label> 
+ <div class="container" role="main" style="margin-top: 50pt;">
+        <div class="jumbotron">
+            <form role="form" action="/fetch_code" method="POST">
+            <div class="form-group">
+                <label for="name">Enter keywords</label>
+                <input type="text" class="form-control" id="id" name="input">
+              </div>
+             
 
- </main>
+              <button type="submit" class="btn btn-success">Submit</button>
+            </form>
+        </div>
+		
+		<div class="jumbotron">
+		
+				<div class="form-group">
+				<label>Download your project</label>
+				<output class="form-control">{{answer}}</output>
+    </div>
+
+<script class="sizing" src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiM2N2MxOGUiLCJ3ZWIiOnsiYm90SWQiOiI1YzkwY2M1OWY5ZTVjMDZmOWVkNTE2ODciLCJ0aGVtZSI6IiM2N2MxOGUifX0=" async defer></script>
+ </div>
+ 
+ <div class="jumbotron" >
+<label>Feedback</label>
+<br>
+
+<div id="wrapper">
+  <form action="/" method="POST">
+    <p class="clasificacion">
+       <input id="radio1" type="radio" name="estrellas" value="5"><!--
+      --><label for="radio1">&#9733;</label><!--
+      --><input id="radio2" type="radio" name="estrellas" value="4"><!--
+      --><label for="radio2">&#9733;</label><!--
+      --><input id="radio3" type="radio" name="estrellas" value="3"><!--
+      --><label for="radio3">&#9733;</label><!--
+      --><input id="radio4" type="radio" name="estrellas" value="2"><!--
+      --><label for="radio4">&#9733;</label><!--
+      --><input id="radio5" type="radio" name="estrellas" value="1"><!--
+      --><label for="radio5">&#9733;</label>
+    </p>	
+  </form>
+</div>
+<br>
+<textarea name="feedback" class="form-control" placeholder="Leave a comment"></textarea>
+<br>
+<button type="submit" class="btn btn-success">Submit</button>
+ 
+</div>
+
 </body>
 </html>
