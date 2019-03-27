@@ -6,8 +6,7 @@
 textarea[type="feedback"]::placeholder {  
                 text-align: left; 
             } 
-</style>
-
+			</style>
 </head>
 
 <body>
@@ -16,13 +15,11 @@ textarea[type="feedback"]::placeholder {
     <link rel="stylesheet" href="../static/css/bootstrap-theme.min.css"/>
     <script src="../static/js/jquery-1.11.1.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-
 <fieldset class="field_set">
 <br>
 </fieldset>
 
-	{% include 'includes/pagenav.html' %}
-
+{% include 'includes/pagenav.html' %}
 
  <div class="container" role="main" style="margin-top: 50pt;">
         <div class="jumbotron">
@@ -41,7 +38,7 @@ textarea[type="feedback"]::placeholder {
 		
 				<div class="form-group">
 				<label>Download your project</label>
-				<output class="form-control">{{answer}}</output>
+				<a class="form-control" href={{answer}}>Link</a>
     </div>
 
 <script class="sizing" src="https://widget.flowxo.com/embed.js" data-fxo-widget="eyJ0aGVtZSI6IiM2N2MxOGUiLCJ3ZWIiOnsiYm90SWQiOiI1YzkwY2M1OWY5ZTVjMDZmOWVkNTE2ODciLCJ0aGVtZSI6IiM2N2MxOGUifX0=" async defer></script>
@@ -68,10 +65,11 @@ textarea[type="feedback"]::placeholder {
   </form>
 </div>
 <br>
+<div class="form-group">
 <textarea name="feedback" class="form-control" placeholder="Leave a comment"></textarea>
 <br>
 <button type="submit" class="btn btn-success">Submit</button>
- 
+ </div>
 </div>
 
 </body>
