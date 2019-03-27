@@ -19,7 +19,7 @@ python app.py
 - To Run this code as an rest-API service. 
 
 ```
-python api_server.py
+python server.py
 ```
 
 Now use any API testing tool like POSTMAN to test the api 
