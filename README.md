@@ -34,7 +34,8 @@ resp = requests.get('http://127.0.0.1:8080/fetch/{}'.format(code))
 #for POST requests
 resp = requests.post('http://127.0.0.1:8080/', data={'req':code))
 
-print resp.text 
+print resp.text                   #prints the output in json format
+print resp.json()['data_link']    #prints only the project link
 ```
 
 
