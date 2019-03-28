@@ -1,5 +1,5 @@
 # Pronto
-*Pronto* is a Flask Web Application which fetches JAVA Project (.jar) file based on the requirement provided by the User. All the files are uploaded on an AWS S3 bucket. Most of the project templates which are used regularly by Developers are included in the repository. 
+*Pronto* is a Flask Web Application (and a rest service) which fetches JAVA Project (.jar) file based on the requirement provided by the User. All the files are uploaded on an AWS S3 bucket. Most of the project templates which are used regularly by Developers are included in the repository. 
 
 This is a Proof of concept(or Minimum viable concept) and is not intended to be used on a commercial scale.
 
