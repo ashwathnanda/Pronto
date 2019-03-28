@@ -99,7 +99,7 @@ def exceptions(e):
 
 #runs the web application with the appropriate port and host
 if __name__ == '__main__':
-	handler = RotatingFileHandler('app.log', maxBytes=10000, backupCount=3)
+	handler = RotatingFileHandler('./log/app.log', maxBytes=10000, backupCount=3)
 	logger = logging.getLogger('werkzeug')
 	logger.setLevel(logging.ERROR)
 	logger.addHandler(handler)
