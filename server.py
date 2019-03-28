@@ -33,8 +33,8 @@ class Fetch_code(Resource):
       ans = ','.join(ans)
       for i,item in enumerate(l):
          if(ans == item):
-            return jsonify(data_link=data['Snippet'][i],status=200)
-      return jsonify(data_link='Requirement not found' , status=404)
+            return jsonify(requirement=code,data_link=data['Snippet'][i],status=200)
+      return jsonify(requirement=code,data_link='Requirement not found' , status=404)
 
 #POST request with 'req' as the argument  
    def post(self):
@@ -47,8 +47,8 @@ class Fetch_code(Resource):
       ans = ','.join(ans)
       for i,item in enumerate(l):
          if(ans == item):
-            return jsonify(data_link=data['Snippet'][i], status=200)
-      return jsonify(data_link='Requirement not found' , status=404)
+            return jsonify(requirement=code,data_link=data['Snippet'][i], status=200)
+      return jsonify(requirement=code,data_link='Requirement not found' , status=404)
       
 api.add_resource(Fetch_code, "/fetch/<string:code>" , '/')
 app.run(port = 8080,host='0.0.0.0',debug=True) 
