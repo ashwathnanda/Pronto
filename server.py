@@ -51,4 +51,4 @@ class Fetch_code(Resource):
       return jsonify(requirement=code,data_link='Requirement not found' , status=404)
       
 api.add_resource(Fetch_code, "/fetch/<string:code>" , '/')
-app.run(port = 8080,host='0.0.0.0',debug=True) 
+app.run(port = 8080) 
