@@ -49,7 +49,7 @@ textarea[type="feedback"]::placeholder {
 <br>
 
 <div id="wrapper">
-  <form action="/" method="POST">
+  <form action="/feedbackForm" method="POST">
     <p class="clasificacion">
        <input id="radio1" type="radio" name="estrellas" value="5"><!--
       --><label for="radio1">&#9733;</label><!--
@@ -61,15 +61,15 @@ textarea[type="feedback"]::placeholder {
       --><label for="radio4">&#9733;</label><!--
       --><input id="radio5" type="radio" name="estrellas" value="1"><!--
       --><label for="radio5">&#9733;</label>
-    </p>	
+    </p>
+	<div class="form-group">
+	<textarea name="feedback" class="form-control" placeholder="Leave a comment"></textarea>
+	<br>
+	<button type="submit" class="btn btn-success">Submit</button>
+	 </div>
   </form>
 </div>
 <br>
-<div class="form-group">
-<textarea name="feedback" class="form-control" placeholder="Leave a comment"></textarea>
-<br>
-<button type="submit" class="btn btn-success">Submit</button>
- </div>
 </div>
 
 </body>
