@@ -7,9 +7,11 @@ from flashtext import KeywordProcessor
 import pandas as pd
 import requests
 from logging.handlers import RotatingFileHandler
+from logging.handlers import TimedRotatingFileHandler
 from time import strftime
 import logging
 import traceback
+import csv
 
 
 app = Flask(__name__)
@@ -66,6 +68,16 @@ def fetch_code():
 	
 	return render_template('index.html',answer=answer)
 
+@app.route('/feedbackForm',methods=['POST'])
+def feedbackForm():
+	Feedback = request.form['feedback']
+	Button = request.form['button']
+	d = {'Feedback' : Feedback , 'Ratings' : Button}
+	df_feedback = pd.DataFrame.from_records([d])
+	df_feedback.to_csv('Feedback.csv',encoding='utf-8', index=False)
+	return render_template('index.html')
+	
+
 @app.after_request
 def after_request(response):
     """ Logging after every request. """
@@ -103,4 +115,4 @@ if __name__ == '__main__':
 	logger = logging.getLogger('werkzeug')
 	logger.setLevel(logging.ERROR)
 	logger.addHandler(handler)
-	app.run(port = 8080)
+	app.run(debug='True',port = 8080,host='0.0.0.0')
