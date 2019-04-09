@@ -5,3 +5,4 @@ Flask-RESTful==0.3.7
 requests==2.20.1
 logging-0.4.9.6
 jsonify==0.5
+moesifwsgi==1.1.14
