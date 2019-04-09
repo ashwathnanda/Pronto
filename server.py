@@ -8,9 +8,17 @@ from flask_restful import Api, Resource, reqparse
 import pandas as pd
 from flashtext import KeywordProcessor
 import json
+from moesifwsgi import MoesifMiddleware
+
+moesif_settings = {
+    'APPLICATION_ID': 'eyJhcHAiOiIxNTA6MjU3IiwidmVyIjoiMi4wIiwib3JnIjoiNDU2OjEzMiIsImlhdCI6MTU1NDc2ODAwMH0.O3rVkWX-yP-kr05hv2s_ezvncL2PJ8dsxWJ0ZMB8pHw'
+}
+
+
 
 app = Flask(__name__)
 api = Api(app)
+app.wsgi_app = MoesifMiddleware(app.wsgi_app, moesif_settings)
 
 
 parser = reqparse.RequestParser()
@@ -27,6 +35,7 @@ key_processor.add_keywords_from_list(my_list2)
 
 class Fetch_code(Resource):
    def get(self, code):
+
       code.lower()
       ans = key_processor.extract_keywords(code)
       ans.sort()
@@ -41,14 +50,17 @@ class Fetch_code(Resource):
       parser.add_argument('req',type=str)
       args = parser.parse_args()
       code = args['req']
-      code.lower()
-      ans = key_processor.extract_keywords(code)
-      ans.sort()
-      ans = ','.join(ans)
-      for i,item in enumerate(l):
-         if(ans == item):
-            return jsonify(requirement=code,data_link=data['Snippet'][i], status=200)
-      return jsonify(requirement=code,data_link='Requirement not found' , status=404)
+      if code is None:
+         return jsonify(requirement='No requirement found',data_link='None',status=404)
+      else:
+         code.lower()
+         ans = key_processor.extract_keywords(code)
+         ans.sort()
+         ans = ','.join(ans)
+         for i,item in enumerate(l):
+            if(ans == item):
+               return jsonify(requirement=code,data_link=data['Snippet'][i], status=200)
+         return jsonify(requirement=code,data_link='Requirement not found' , status=404)
       
-api.add_resource(Fetch_code, "/fetch/<string:code>" , '/')
-app.run(port = 8080) 
+api.add_resource(Fetch_code, "/<string:code>" , '/')
+app.run(port = 8080,host='0.0.0.0',debug=True) 
