@@ -11,7 +11,7 @@ from logging.handlers import TimedRotatingFileHandler
 from time import strftime
 import logging
 import traceback
-import csv
+
 
 
 app = Flask(__name__)
@@ -74,7 +74,8 @@ def feedbackForm():
 	Button = request.form['button']
 	d = {'Feedback' : Feedback , 'Ratings' : Button}
 	df_feedback = pd.DataFrame.from_records([d])
-	df_feedback.to_csv('Feedback.csv',encoding='utf-8', index=False)
+	with open('Feedback.csv' , 'a') as f:
+		df_feedback.to_csv(f,encoding='utf-8', index=False,header=False)
 	return render_template('index.html')
 	
 
