@@ -2,7 +2,7 @@ pandas==0.22.0
 Flask==2.3.2
 flashtext==2.7
 Flask-RESTful==0.3.7
-requests==2.20.1
+requests==2.31.0
 logging-0.4.9.6
 jsonify==0.5
 moesifwsgi==1.1.14
